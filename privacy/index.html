@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="How Personal Block accesses, uses, stores, and shares Google Calendar data.">
+    <link rel="canonical" href="https://vibejy.github.io/personal-block/privacy/">
+    <link rel="stylesheet" href="/personal-block/styles.css">
+    <title>Personal Block Privacy Policy</title>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Personal Block</p>
+      <h1>Privacy Policy</h1>
+
+      <div class="content">
+        <p class="updated">Last updated: October 5, 2026</p>
+        <p>
+          This policy describes Personal Block, a personal-use calendar sync,
+          and covers Personal Block’s handling of Google Calendar data.
+        </p>
+
+        <section>
+          <h2>Google data accessed</h2>
+          <p>
+            Personal Block requests Google’s <code>calendar.events.owned.readonly</code>
+            scope to read events on calendars owned by the authorizing account,
+            and <code>calendar.app.created</code> to create, update, or delete
+            events on calendars created by the app. The automation uses these
+            permissions only with its configured source calendars and its
+            Personal Blocks destination calendar.
+          </p>
+          <p>
+            From source events, it reads event identifiers, status, start and
+            end times, busy or free status, and event type. For eligibility and
+            duplicate checks it also reads limited organizer and attendee
+            email/response fields. It does not request source titles,
+            descriptions, locations, attachments, attendee names, or other
+            guest details.
+          </p>
+        </section>
+
+        <section>
+          <h2>How data is used and shared</h2>
+          <p>
+            Calendar data is used only to decide which time blocks to create,
+            update, cancel, or skip. Each destination event contains the fixed
+            title “Personal Block,” its start and end times, and busy or free
+            status. Destination events are private and are sent to the
+            configured work-calendar account. Source event names and other
+            descriptive details are not copied.
+          </p>
+          <p>
+            Calendar data is processed through the Google Calendar API and is
+            subject to Google’s terms and privacy practices, including the
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
+            The automation does not send calendar event content to this website
+            or use it for advertising. It may send its operator a Telegram
+            alert with the sync status and last successful sync time; alerts
+            contain no event details.
+          </p>
+        </section>
+
+        <section>
+          <h2>Storage and retention</h2>
+          <p>
+            OAuth credentials and synchronization state are stored locally on
+            the operator’s computer. The state keeps opaque source and
+            destination event identifiers, a content fingerprint, and an end
+            time so the sync can update or cancel the matching block. It does
+            not store source event titles, descriptions, or locations. After an
+            event has ended, a later successful sync removes its mapping from
+            local state. Events already created in Google Calendar remain there
+            until the calendar owner removes them.
+          </p>
+        </section>
+
+        <section>
+          <h2>Your controls</h2>
+          <p>
+            You can stop future synchronization by revoking Personal Block’s
+            Google access. Revoking access does not automatically remove blocks
+            already created in Google Calendar; those can be removed from the
+            Personal Blocks calendar by its owner.
+          </p>
+        </section>
+
+        <p class="back"><a href="../">Personal Block app information</a></p>
+      </div>
+    </main>
+  </body>
+</html>
